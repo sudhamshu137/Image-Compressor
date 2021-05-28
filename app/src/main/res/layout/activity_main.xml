@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    tools:context=".MainActivity">
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:neumorph_shapeType="pressed"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv"
+            android:textSize="50sp"
+            android:text="IMAGE COMPRESSOR"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_medium"/>
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/pick"
+        style="@style/Widget.Neumorph.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        android:fontFamily="@font/cabin_bold"
+        android:padding="28dp"
+        app:neumorph_shadowElevation="5dp"
+        android:text="SELECT FILE    >>"
+        android:onClick="pick"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:neumorph_shapeType="flat" />
+
+</RelativeLayout>
