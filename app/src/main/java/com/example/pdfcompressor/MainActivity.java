@@ -29,6 +29,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     TextView tv;
+    Bitmap compressedBitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,14 +76,16 @@ public class MainActivity extends AppCompatActivity {
 
                 int permission = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
-                    save(bitmap);
+                    compressedBitmap = ImageResizer.reduceBitmapSize(bitmap, 500000);
+                    save(compressedBitmap);
                 }
                 else{
                     if(permission != PackageManager.PERMISSION_GRANTED){
                         ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 100);
                     }
                     else{
-                        save(bitmap);
+                        compressedBitmap = ImageResizer.reduceBitmapSize(bitmap, 500000);
+                        save(compressedBitmap);
                     }
                 }
 
